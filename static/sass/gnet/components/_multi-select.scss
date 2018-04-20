@@ -1,0 +1,14 @@
+.multi-select {
+  .dropdown {
+    margin-bottom: 0;
+    width: rem-calc(170);
+  }
+}
+
+.multi-select__delete {
+  cursor: pointer;
+  color: $off-white;
+  &:hover {
+    color: $white;
+  }
+}

@@ -1,0 +1,62 @@
+// =========================================================================
+// CARD STYLES
+// =========================================================================
+
+
+.downloads-list {
+}
+
+.card-container {
+  height: 100%;
+  padding: 1rem;
+  border-radius: 4px;
+  background: $card-background;
+  box-shadow: $card-shadow;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+.card-container--tall {
+  min-height: 13.5rem;
+}
+
+.card-container--short {
+  min-height: 9.5rem;
+}
+
+.card-container--no-min {
+  min-height: 0;
+}
+
+// Defines .card-container--height-$# mixin that can be used for whole numbers.
+// ------------------------------------------------------------------------------------
+
+@for $i from 1 through 60 {
+  .card-container.card-container--min-height-#{$i} {
+    min-height: ($spacer * $i);
+  }
+}
+
+@for $i from 1 through 60 {
+  .card-container.card-container--height-#{$i} {
+    height: ($spacer * $i);
+  }
+}
+
+// ------------------------------------------------------------------------------------
+
+.card-container--flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container--interactive:hover {
+  background: linear-gradient(135deg, darken($gray, 13%) 0%, $dark-gray 100%);
+  box-shadow: -1px -1px 0px 0px rgba(255,255,255,0.1), 1px 1px 0px 0px rgba(0,0,0, 0.3);
+}
+
+.card-container--interactive:active {
+  background: linear-gradient(135deg, darken($gray, 16%) 0%, darken($dark-gray, 1%) 100%);
+  box-shadow: -1px -1px 0px 0px rgba(255,255,255,0.1), 1px 1px 0px 0px rgba(0,0,0, 0.3);
+}

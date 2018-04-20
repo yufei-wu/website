@@ -1,0 +1,85 @@
+// ==========================================================================
+// DROPDOWN
+// ==========================================================================
+
+
+
+.dropdown {
+  display: block;
+  position: relative;
+  width: auto;
+  min-width: 110px;
+  max-width: 100%;
+  margin: rem-calc(0 0 50);
+  padding: 1px 0;
+  border: 0 solid transparent;
+  border-radius: $border-radius;
+  background-color: $gray;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.dropdown--tight {
+  margin-bottom: rem-calc(15);
+}
+
+.dropdown.form__input {
+  padding: 1px 0; // increase specificity to override .form__input rule
+}
+
+.dropdown > select {
+  position: relative;
+  width: 115%;
+  min-width: 115%;
+  max-width: 115%;
+  margin: 0;
+  padding: rem-calc(10);
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: $off-white;
+  background-color: $gray;
+  font-size: 16px;
+  font-weight: 400;
+  text-overflow: '';
+  -webkit-appearance: none;
+  -moz-appearance: menulist-text; // was set to "window" and caused odd display on windows and linux.
+  appearance: none;
+}
+
+.dropdown--tight > select {
+  line-height: normal;
+  padding: rem-calc(8 28 8 8);
+  font-size: rem-calc(14);
+}
+
+// This hides native dropdown button arrow in IE
+.dropdown > select::-ms-expand {
+  display: none;
+}
+
+.dropdown::after {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  height: 12px;
+  margin-top: -6px;
+  padding: 0;
+  background-color: transparent;
+  color: $off-white;
+  font-family: sans-serif;
+  line-height: 12px;
+  text-align: center;
+  content: '\25BE';
+  pointer-events: none;
+}
+
+.dropdown > select:focus {
+  outline: none;
+}
+
+// This hides focus around selected option in FF
+.dropdown > select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 $off-white;
+}

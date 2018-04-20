@@ -1,0 +1,70 @@
+// ==========================================================================
+// HOSTED METRICS INQUIRY PAGE
+// ==========================================================================
+
+.hosted__metrics-list {
+  list-style: none;
+  list-style-position: outside;
+}
+
+.hosted__metrics-item {
+  margin-top: rem-calc(20);
+  margin-left: rem-calc(-40);
+  b {
+    color: $white;
+  }
+  em {
+    color: $white;
+  }
+}
+
+.hosted__metrics-item--slight-emphasis {
+  font-weight: 700;
+}
+
+.hosted-metrics__img {
+  margin: 0 auto;
+
+  background-image: url(../../static/img/hosted_metrics-inquiry--wide.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 150px;
+  width: 100%;
+
+  @include at-least(small) {
+    height: 225px;
+  }
+
+  @include at-least(medium) {
+    background-image: url(../../static/img/hosted_metrics-inquiry.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  > img {
+    display: block;
+    margin: 0 auto;
+    height: auto;
+  }
+}
+
+.hosted-metrics__submit-button {
+  margin-top: 18px;
+}
+
+.hosted-metrics__input-height {
+  height: 40px;
+}
+
+.hosted-metrics__subtext {
+  display: block;
+  font-size: 0.8125rem;
+}
+
+.hosted-metrics__enquiry-success {
+  color: $success-color;
+}

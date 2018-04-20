@@ -1,0 +1,10 @@
+
+<h5 class="blog-aside__heading">Categories</h5>
+
+<div class="blog-categories">
+	{{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+	<h5 class="blog-categories__item">
+		<a href="/categories/{{ $name | urlize }}/">{{ $name | title }}</a>
+	</h5>
+	{{ end }}
+</div>

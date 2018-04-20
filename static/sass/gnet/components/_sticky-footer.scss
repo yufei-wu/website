@@ -1,0 +1,108 @@
+// ==========================================================================
+// STICKY FOOTER
+// ==========================================================================
+
+
+.sticky-footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  overflow: visible;
+  z-index: $z-index-6;
+  padding: rem-calc(20);
+  background-color: $dark-orange;
+  box-shadow: 0px -5px 15px 0px $black;
+  opacity: 0.97;
+  padding: rem-calc(5 10 10 10);
+
+}
+
+.sticky-footer__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100%;
+  margin: 7px 20px 0 0;
+}
+
+.sticky-footer__copy {
+  color: #333333;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.sticky-footer__items {
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 150px;
+}
+
+.sticky-footer__points {
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  line-height: 1.8;
+
+  & .number {
+    font-weight: 700;
+    @include at-least(small) {
+      padding:3px 7px;
+      border: 3px solid #333333;
+      border-radius:50%;
+    }
+  }
+}
+
+.sticky-footer__footer-signup {
+  display: inline-block;
+  margin: 10px;
+}
+
+.sticky-footer__image {
+  position: absolute;
+  top: -62px;
+  width: 130px;
+  left: 40px;
+}
+
+.sticky-footer__close {
+  @extend .btn--close;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #333333; //added for GrafanaCon
+}
+
+.sfanimate-enter {
+  opacity: 0.01;
+  transform: translate(0,100px);
+}
+
+.sfanimate-enter.sfanimate-enter-active {
+  opacity: 1;
+  transform: translate(0,0);
+  transition: all 500ms ease-in;
+}
+
+.sfanimate-appear {
+  opacity: 0.01;
+  transform: translate(0,100px);
+}
+
+.sfanimate-appear.sfanimate-appear-active {
+  opacity: 1;
+  transform: translate(0,0);
+  transition: all 800ms ease-in 1200ms;
+}
+
+.sfanimate-leave {
+  opacity: 1;
+  transform: translate(0,0);
+}
+
+.sfanimate-leave.sfanimate-leave-active {
+  opacity: 0.01;
+  transform: translate(0,100px);
+  transition: all 500ms ease-out;
+}

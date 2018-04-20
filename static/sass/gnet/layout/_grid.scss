@@ -1,0 +1,25 @@
+// =========================================================================
+// GRID
+// =========================================================================
+
+
+
+// Wrapper
+// -------------------------------------------------------------------------
+
+.wrapper {
+  @include clearfix;
+  padding: 0 20px;
+
+  @include at-least(small) {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  @include at-least(1240px) {
+    margin-left: calc(50vw - 620px);
+    margin-right: 0;
+  }
+}
+
+@import './grid/flexbox-grid';

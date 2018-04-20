@@ -1,0 +1,188 @@
+// ==========================================================================
+// VARIABLES
+// ==========================================================================
+
+$border-radius: 2px;
+
+// Colors
+// --------------------------------------------------------------------------
+
+$primary-color: #f46800;
+$secondary-color: #777;
+$success-color: #3adb76;
+$warning-color: #ffed00;
+$alert-color: #ea2531;
+$lighter-gray: #B8B8B8;
+$light-gray: #a2a2a2;
+$medium-gray: #898989;
+$gray: #555;
+$dark-gray: #262626;
+$darker-gray: #1f1f1f;
+$darker-gray2: #161616;
+$black: #0a0a0a;
+$white: #fefefe;
+$off-white: #c5c5c5;
+$off-white2: #eaeaea;
+$dark-orange: #e94d00;
+$blue: #13b2d4;
+$dark-blue: darken($blue,10%);
+$amethyst: #d077e8;
+$monza: #d6041b;
+$alert-online:  #10a345;
+
+$color-page-hero-bg: #2e2e2e;
+
+// Gradients
+$orange-gradient: linear-gradient(to right, #ff8100 0%, #993300 75%);
+$blue-gradient: linear-gradient(to right, $blue 0%, $dark-blue 75%);
+$dark-gray-gradient: linear-gradient(to right, #444444 0%, $black 75%);
+
+
+// Font-size scale (Based on http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/)
+// ---------------------------------------------------------------------------
+
+$font-size-giga:      rem-calc(48);
+$font-size-mega:      rem-calc(36);
+$font-size-kilo:      rem-calc(24);
+$font-size-alpha:     rem-calc(21);
+$font-size-beta:      rem-calc(18);
+$font-size-gamma:     rem-calc(16);
+$font-size-delta:     rem-calc(14);
+$font-size-epsilon:   rem-calc(12);
+$font-size-zeta:      rem-calc(11);
+$font-size-milli:     rem-calc(10);
+
+
+// Breakpoints
+// --------------------------------------------------------------------------
+
+$bp-small: rem-calc(650);
+$bp-medium: rem-calc(992);
+$bp-large: rem-calc(1200);
+$bp-xlarge: rem-calc(1900);
+$bp-nav: rem-calc(890); // Breakpoint for .site-nav width (was 950 -- TW)
+
+// Grid
+// --------------------------------------------------------------------------
+
+$grid-breakpoints: (
+        xs : 0,
+        sm : $bp-small,
+        md : $bp-medium,
+        lg : $bp-large
+);
+
+$grid-padding: 1.5rem;
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+
+$spacer:   1rem !default;
+$spacer-x: $spacer !default;
+$spacer-y: $spacer !default;
+$spacers: (
+  0: (
+    x: 0,
+    y: 0
+  ),
+  1: (
+    x: $spacer-x,
+    y: $spacer-y
+  ),
+  2: (
+    x: ($spacer-x * 1.5),
+    y: ($spacer-y * 1.5)
+  ),
+  3: (
+    x: ($spacer-x * 3),
+    y: ($spacer-y * 3)
+  )
+) !default;
+$border-width: 1px !default;
+
+$form-margin: 0.2rem;
+
+//
+// Text
+//
+
+$text-color:        $lighter-gray;
+$text-color-muted:  $medium-gray;
+
+//
+// Body
+//
+$body-bg: $dark-gray;
+$body-text-color: $text-color;
+$body-line-height: 1.4;
+
+// We use these to style the <hr> element
+$hr-border-width: 1px;
+$hr-border-style: solid;
+$hr-border-color: $gray;
+$hr-margin: rem-calc(20);
+
+//
+// Links
+//
+
+$link-color:        $primary-color;
+$link-color-hover:  lighten($primary-color, 10%);
+
+//
+// Buttons
+//
+
+$btn-dark-bg: linear-gradient(0, #101010 0%, #1f1f1f 100%);
+$btn-dark-hover-bg: $darker-gray;
+$btn-dark-shadow: -1px -1px 0px 0px rgba(255,255,255,0.1), 1px 1px 0px 0px rgba(0,0,0, 0.3);
+
+// Headings
+
+$headings-margin-bottom: $spacer;
+$headings-font-family:   inherit;
+$headings-font-weight:   400;
+$headings-font-style:    normal;
+$headings-line-height:   1.1;
+$headings-color:         $off-white2;
+
+$font-size-h1: 2.5rem;
+$font-size-h2: 2rem;
+$font-size-h3: 1.75rem;
+$font-size-h4: 1.5rem;
+$font-size-h5: 1.25rem;
+$font-size-h6: 1rem;
+
+//
+// Page Header
+//
+
+$page-header-bg: $dark-gray-gradient;
+$page-header-height-small: rem-calc(75);
+$page-header-height-large: rem-calc(92);
+
+//
+// Page Submenu
+//
+$page-submenu-bottom-margin: $spacer*2;
+
+//
+// Page Content
+//
+$page-content-top-padding: $spacer*2;
+
+//
+// Common Page elements
+//
+
+$page-section-with-bg-pattern-shadow: 0px 0px 20px #111;
+
+
+//
+// Cards
+//
+
+$card-background: linear-gradient(135deg, darken($gray, 15%) 0%, $dark-gray 100%);
+$card-shadow: -1px -1px 0px 0px rgba(255,255,255,0.1), 1px 1px 0px 0px rgba(0,0,0, 0.3);

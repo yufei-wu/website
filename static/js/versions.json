@@ -1,0 +1,9 @@
+[
+  { "version": "v5.0", "path": "/docs/v5.0", "archived": false },
+  { "version": "v4.6", "current": true, "path": "/", "archived": false},
+  { "version": "v4.5", "path": "/docs/v4.5", "archived": true },
+  { "version": "v4.4", "path": "/v4.4" },
+  { "version": "v4.3", "path": "/v4.3" },
+  { "version": "v4.1", "path": "/v4.1" },
+  { "version": "v3.1", "path": "/v3.1" }
+]

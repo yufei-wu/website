@@ -1,0 +1,140 @@
+// ==========================================================================
+// GRAFANACON PAGE
+// ==========================================================================
+.video-card-container, 
+.grafanacon-infograf-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.video-card {
+  margin: 0;
+  padding: 0 $spacer*2 $spacer*2 0;
+  //flex-grow: 1;
+  text-align: center;
+  position: relative;
+
+  @include at-least(small) {
+    width: 33%;
+  }
+
+  @include at-least(medium) {
+    width: 20%;
+  }
+
+  img {
+    box-shadow: 0 0 20px $black;
+  }
+
+  a {
+    display: block;
+    position: relative;
+  }
+
+  .fa-play {
+    position: absolute;
+    font-size: $font-size-kilo;
+    color: $white;
+    opacity: 0.5;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  figcaption a {
+    font-size: rem-calc(15);
+    font-style: italic;
+  }
+
+  &:hover {
+    .fa-play {
+      opacity: 0.7;
+    }
+
+    figcaption a {
+      color: $link-color-hover;
+    }
+  }
+}
+
+.grafanacon-infograf-card {
+  min-height: 0;
+  width: 100%;
+  white-space: nowrap;
+  text-align: center;
+  flex-grow: 1;
+  text-align: center;
+  position: relative;
+  margin-right: rem-calc(20);
+  margin-bottom: rem-calc(20);
+
+  @include at-least(small) {
+    width: rem-calc(110);
+    height: rem-calc(70);
+  }
+
+  h3 {
+    margin: rem-calc(0);
+    font-size: $font-size-kilo;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.0;
+    color: $primary-color;
+
+    small {
+      color: $off-white;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 55%;
+      @include at-least(small) {
+        display: block;
+      }
+    }
+  }
+}
+
+.grafanacon-image-band {
+  width: 100%;
+  display: none;
+  @include at-least(medium) {
+    display: flex;
+    justify-content: center;
+    
+    img {
+      margin: 0;
+      height: 200px;
+    }
+  }
+}
+
+.grafanacon-speaker-logos {
+  background: url('../../static/img/polygon_texture_black.jpg') 0 0 repeat;
+  background-size: cover;
+  padding: rem-calc(20 0 0 0);
+  margin-bottom: $spacer * 3;
+  box-shadow: $page-section-with-bg-pattern-shadow;
+  text-align: center;
+
+  img {
+    padding-right: rem-calc(30);
+    vertical-align: middle;
+    margin-bottom: rem-calc(10);
+  }
+}
+
+.grafanacon-project-logos {
+  background: url('../../static/img/polygon_texture_blue.jpg') 0 0 repeat;
+  background-size: cover;
+  padding: rem-calc(20 0 0 0);
+  margin-bottom: $spacer * 3;
+  box-shadow: $page-section-with-bg-pattern-shadow;
+  text-align: center;
+
+  img {
+    padding-right: rem-calc(30);
+    vertical-align: middle;
+    margin-bottom: rem-calc(10);
+  }
+}

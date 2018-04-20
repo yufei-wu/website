@@ -1,0 +1,203 @@
+// ==========================================================================
+// MEDIA
+// ==========================================================================
+
+
+
+.media {
+  display: flex;
+  align-items: flex-start;
+}
+
+.media__figure {
+  margin-right: 1em;
+}
+
+.media__body {
+  flex: 1;
+}
+
+// Contribute page
+// --------------------------------------------------------------------------
+
+img.two-column-hero__img-jetpacktocat {
+  width: auto;
+  max-height: 350px;
+}
+
+// Support page
+// --------------------------------------------------------------------------
+
+img.two-column-hero__img-support {
+  width: auto;
+  max-height: 200px;
+}
+
+// For early access signup
+// --------------------------------------------------------------------------
+
+.asteroid-field {
+  @include at-least(medium) {
+    width: rem-calc(300);
+  }
+}
+
+.asteroid {
+    position: relative;
+
+    height: 370px;
+    background: url('../../static/img/claimed_asteroid.svg') no-repeat;
+    background-size: 425px 492px;
+
+    @include at-least(medium) {
+      width: 407px;
+    }
+}
+
+.asteroid-name {
+    display: block;
+    position: absolute;
+    top: 223px;
+    left: 25px;
+    width: 328px;
+    color: $medium-gray;
+    font-weight: 900;
+    font-size: 27px;
+    text-transform: uppercase;
+    text-align: center;
+    transform: skew(6deg,-8.5deg);
+    text-shadow: 0px -1px 1px rgba(255, 255, 255, .2);
+}
+
+.asteroid-reserved {
+    display: block;
+    position: absolute;
+    top: 206px;
+    left: 152px;
+    color: $medium-gray;
+    font-size: rem-calc(12);
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    transform: skew(6deg,-8.5deg);
+    text-shadow: 0px -1px 1px rgba(255, 255, 255, .2);
+}
+
+.asteroid-name-long {
+    top: 229px;
+    font-size: 16px;
+}
+
+.asteroid-name-medium {
+    font-size: 20px;
+}
+
+// For Hosted Grafana
+// --------------------------------------------------------------------------
+
+.modal__hosted-metrics {
+    margin: $spacer*4 auto;
+    width: 300px;
+    >img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.launch-container {
+  position: relative;
+  width: 250px;
+  margin-left: rem-calc(32);
+}
+
+.starship-rocket {
+  @include at-least(medium) {
+    display: block;
+    position: absolute;
+    left: 66px;
+  }
+  display: none;
+}
+
+.starship-shadow {
+  @include at-least(medium) {
+    display: block;
+    position: absolute;
+    top: 202px;
+    left: 100px;
+  }
+  display: none;
+}
+
+.starship-launchpad {
+  @include at-least(medium) {
+    display: block;
+    position: absolute;
+    top: 180px;
+  }
+  display: none;
+}
+
+.starship-rocket.active {
+  animation: starship-takeoff 1s ease-in forwards;
+}
+
+.starship-shadow.active {
+  animation: shadow-takeoff 1s ease-in forwards;
+}
+
+@keyframes starship-takeoff {
+  0%{
+    top: 0px;
+    transform: rotate(0deg);
+  }
+  10% { transform: rotate(7deg) }
+  14% { transform: rotate(-6deg) }
+  21% { transform: rotate(10deg) }
+  25% { transform: rotate(-9deg) }
+  29% { transform: rotate(8deg) }
+  32% { transform: rotate(5deg) }
+  36% { transform: rotate(15deg) }
+  40% { transform: rotate(0deg) }
+  50% {
+    top: -50px;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: -2000px;
+  }
+}
+
+@keyframes shadow-takeoff {
+  0% {
+    transform: scale(1);
+  }
+  10% { transform: scale(1.05) }
+  14% { transform: scale(0.95) }
+  21% { transform: scale(1.05) }
+  25% { transform: scale(0.95) }
+  29% { transform: scale(1.05) }
+  32% { transform: scale(0.95) }
+  36% { transform: scale(1.05) }
+  40% { transform: scale(0.95) }
+  50% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+    left: 126px;
+  }
+  70% {
+    left: 200px;
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    left: 250px;
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}

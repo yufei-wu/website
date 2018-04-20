@@ -1,0 +1,113 @@
+// =========================================================================
+// BASE
+// =========================================================================
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @include pt-sans;
+  @include font-smoothing;
+  background: $body-bg;
+  color: $body-text-color;
+  line-height: $body-line-height;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $link-color-hover;
+  }
+}
+
+hr {
+  border: $hr-border-style $hr-border-color;
+  border-width: $hr-border-width 0 0;
+  clear: both;
+  height: 0;
+  margin: $hr-margin 0 ($hr-margin - rem-calc($hr-border-width));
+}
+
+img {
+  border: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-center {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: $text-color-muted !important;
+}
+
+.text-size-sm {
+  font-size: $font-size-epsilon;
+}
+
+//
+// Headings
+//
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-top: 0;
+  margin-bottom: $headings-margin-bottom;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  font-style: $headings-font-style;
+  line-height: $headings-line-height;
+  color: $headings-color;
+
+  > b, > strong {
+    color: $primary-color;
+    font-weight: normal;
+  }
+}
+
+.h1 { font-size: $font-size-h1; }
+.h2 { font-size: $font-size-h2; }
+.h3 { font-size: $font-size-h3; }
+.h4 { font-size: $font-size-h4; }
+.h5 { font-size: $font-size-h5; }
+.h6 { font-size: $font-size-h6; }
+
+b {
+  color: lighten($text-color, 8%);
+}

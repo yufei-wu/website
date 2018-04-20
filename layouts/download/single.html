@@ -1,0 +1,264 @@
+{{ partial "header.html" . }}
+
+<div class="page-header">
+	<div class="page-header-bg">
+		<div class="page-header-bg-shadow"></div>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<h1>Download</h1>
+		</div>
+	</div>
+</div>
+
+<div class="page-content row">
+
+	<div class="large-12 columns">
+		<div class="download-row">
+			{{ if not (hasPrefix .Params.grafana_version "4.2") }}
+			<div class="text-center">
+				<div class="beta-notice">
+					<h3>
+						Grafana <a href="/download/4_2_0/">v4.2 Beta is now available!</a> <br>
+					</h3>
+					<a href="http://docs.grafana.org/guides/whats-new-in-v4-2/">What's New in Grafana v4.2</a>
+				</div>
+			</div>
+			{{ end }}
+			<aside class="download-row-aside">
+				<h2><span class="download-row-aside-step">Step 1:</span> Install</h2>
+
+				<figure>
+					<i class="fa fa-download download-row-aside-icon"></i>
+				</figure>
+			</aside>
+
+			<div class="download-row-content">
+
+				<div class="download-release-heading">
+					<div class="download-another-version-selector">
+						<button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="tiny round button dropdown">
+							Need a different version?
+						</button>
+						<ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
+							{{ range .Site.Pages.ByDate.Reverse }}
+							{{if eq .Section "download" }}
+							<li><a href="{{ .RelPermalink }}">v{{ .Params.grafana_version }}</a></li>
+							{{ end }}
+							{{ end }}
+						</ul>
+					</div>
+
+					<h2>Grafana v{{ .Params.grafana_version }} <span class="download-release-date">({{ .Date.Format "2 Jan 2006" }})</span></h2>
+				</div>
+
+				<div class="clearfix"></div>
+
+				<div class="section-strike">
+					<span>Files</span>
+				</div>
+
+				<div class="download-links-wrapper">
+					<a class="download-link" data-download-link="deb" href="https://grafanarel.s3.amazonaws.com/builds/grafana_{{ .Params.grafana_build }}_amd64.deb">
+						<strong>.deb </strong> <span class="text-muted">(64bit)</span>
+					</a>
+					<a class="download-link" data-download-link="rpm" href="https://grafanarel.s3.amazonaws.com/builds/grafana-{{ .Params.grafana_build }}.x86_64.rpm">
+						<strong>.rpm </strong> <span class="text-muted">(64bit)</span>
+					</a>
+					<a class="download-link" data-download-link="tar.gz" href="https://grafanarel.s3.amazonaws.com/builds/grafana-{{ .Params.grafana_build }}.linux-x64.tar.gz">
+						<strong>.tar.gz </strong> <span class="text-muted">(Linux 64bit)</span>
+					</a>
+					<a class="download-link" data-download-link="zip" href="https://grafanarel.s3.amazonaws.com/builds/grafana-{{ .Params.grafana_version }}.windows-x64.zip">
+						<strong>.zip</strong> <span class="text-muted">(Windows 64bit)</span>
+					</a>
+					<a class="download-link" data-download-link="mac" href="#mac">
+						<strong>.brew</strong> <span class="text-muted">(Mac OSX)</span>
+					</a>
+				</div>
+
+				<div class="download-plaform-tip" data-type="deb">
+					<div class="download-platform-tip-link">
+						<label>File:</label>
+						<a href="https://grafanarel.s3.amazonaws.com/builds/grafana_{{ .Params.grafana_build }}_amd64.deb">
+							grafana_{{ .Params.grafana_build }}_amd64.deb
+						</a>
+					</div>
+					{{ if isset .Params "grafana_deb_sha" }}
+						<div class="download-platform-tip-sha">
+							<label>SHA1:</label>
+							<span>{{ .Params.grafana_deb_sha }}</span>
+						</div>
+					{{ end }}
+					<pre>
+<code class="language-bash">wget https://grafanarel.s3.amazonaws.com/builds/grafana_{{ .Params.grafana_build }}_amd64.deb
+sudo apt-get install -y adduser libfontconfig
+sudo dpkg -i grafana_{{ .Params.grafana_build }}_amd64.deb
+# ... configure your options in /etc/grafana/grafana.ini then
+sudo systemctl start grafana-server</code></pre>
+					<p>
+					Read the Ubuntu / Debian <a href="http://docs.grafana.org/installation/debian/">installation guide</a> for more info.
+					</p>
+				</div>
+
+				<div class="download-plaform-tip" data-type="rpm">
+					<div class="download-platform-tip-link">
+						<label>File:</label>
+						<a href="https://grafanarel.s3.amazonaws.com/builds/grafana-{{ .Params.grafana_build }}.x86_64.rpm">
+							grafana-{{ .Params.grafana_build }}.x86_64.rpm
+						</a>
+					</div>
+					{{ if isset .Params "grafana_rpm_sha" }}
+						<div class="download-platform-tip-sha">
+							<label>SHA1:</label>
+							<span>{{ .Params.grafana_rpm_sha }}</span>
+						</div>
+					{{ end }}
+
+					<pre>
+<code class="language-bash">sudo yum install https://grafanarel.s3.amazonaws.com/builds/grafana-{{ .Params.grafana_build }}.x86_64.rpm
+# ... configure your options in /etc/grafana/grafana.ini then
+sudo systemctl start grafana-server</code></pre>
+					<p>
+					Read the Centos / Redhat <a href="http://docs.grafana.org/installation/rpm/">installation guide</a> for more info.
+					</p>
+				</div>
+
+				<div class="download-plaform-tip" data-type="zip">
+					<div class="download-platform-tip-link">
+						<label>File:</label>
+						<a href="https://grafanarel.s3.amazonaws.com/builds/grafana-{{ .Params.grafana_version }}.windows-x64.zip">
+							grafana-{{ .Params.grafana_version }}.windows-x64.zip
+						</a>
+					</div>
+					{{ if isset .Params "grafana_win_sha" }}
+						<div class="download-platform-tip-sha">
+							<label>SHA1:</label>
+							<span>{{ .Params.grafana_win_sha }}</span>
+						</div>
+					{{ end }}
+					<br>
+					<p>
+					Read the Windows <a href="http://docs.grafana.org/installation/windows/">installation guide</a> for more info.
+					</p>
+				</div>
+
+				<div class="download-plaform-tip" data-type="tar.gz">
+					<div class="download-platform-tip-link">
+						<label>File:</label>
+						<a href="https://grafanarel.s3.amazonaws.com/builds/grafana-{{ .Params.grafana_build }}.linux-x64.tar.gz">
+							grafana-{{ .Params.grafana_build }}.linux-x64.tar.gz
+						</a>
+					</div>
+					{{ if isset .Params "grafana_linux_tar_sha" }}
+						<div class="download-platform-tip-sha">
+							<label>SHA1:</label>
+							<span>{{ .Params.grafana_linux_tar_sha }}</span>
+						</div>
+					{{ end }}
+
+					<pre>
+<code class="language-bash">wget https://grafanarel.s3.amazonaws.com/builds/grafana-{{ .Params.grafana_build }}.linux-x64.tar.gz
+tar -zxvf grafana-{{ .Params.grafana_build }}.linux-x64.tar.gz
+cd grafana-{{ .Params.grafana_build }}
+cp conf/sample.ini conf/custom.ini
+#  make changes to conf/custom.ini then start grafana-server
+./bin/grafana-server</code></pre>
+				</div>
+
+				<div class="download-plaform-tip" data-type="mac">
+					<pre>
+<code class="language-bash">brew update
+brew install grafana</code>
+
+# to update use the reinstall command
+brew update
+brew reinstall grafana</pre>
+				</div>
+
+
+
+				<div class="section-strike">
+					<span>Repositories</span>
+				</div>
+
+				<div class="download-links-wrapper">
+					<a class="download-link" href="http://docs.grafana.org/installation/debian/">
+						<strong>APT</strong> <span class="text-muted">(ubuntu/debian)</span>
+					</a>
+					<a class="download-link" href="http://docs.grafana.org/installation/rpm/">
+						<strong>YUM</strong> <span class="text-muted">(Centos/Redhat)</span>
+					</a>
+					<a class="download-link" href="http://docs.grafana.org/installation/docker/">
+						<strong>Docker</strong> <span class="text-muted">(image)</span>
+					</a>
+					<a class="download-link" href="/builds">
+						<strong>Builds</strong> <span class="text-muted">(nightly)</span>
+					</a>
+				</div>
+
+				{{ .Content }}
+
+				<br>
+				<hr>
+			</div>
+
+			<div class="download-row">
+				<aside class="download-row-aside">
+					<h2><span class="download-row-aside-step">Step 2:</span> Configure</h2>
+
+					<figure>
+						<i class="fa fa-cogs download-row-aside-icon"></i>
+					</figure>
+				</aside>
+
+				<div class="download-row-content">
+					<h3>Choose your Configuration Options</h3>
+
+					<p>
+					The Grafana backend has a number of <a href="http://docs.grafana.org/installation/configuration/">configuration options</a>
+					defined in its config file (usually located at <span class="label info">/etc/grafana/grafana.ini</span> on linux systems).
+					</p>
+
+					<p>
+					In this config file you can change things like the default admin password, http port, grafana database (sqlite3, mysql, postgres),
+					authentication options (google, github, ldap, auth proxy) along with many other options.
+					<p>
+
+					<p>
+					Start your grafana server. Login with your admin user (default admin/admin). Open side menu (click the Grafana icon in top menu)
+					head to Data Sources and add your data source.
+					</p>
+					<br>
+
+					<hr>
+				</div>
+			</div>
+
+			<div class="download-row">
+				<aside class="download-row-aside">
+					<h2><span class="download-row-aside-step">Step 3:</span> Graph it!</h2>
+					<figure>
+						<i class="fa fa-bar-chart download-row-aside-icon"></i>
+					<figure>
+				</aside>
+
+				<div class="download-row-content">
+					<h3>Visualize Your Data</h3>
+					Now that Grafana is installed and configured it's time for the fun stuff: Graphing the data! There
+					are a number of places to get help. You can start by reading the <a href="http://docs.grafana.org/guides/gettingstarted/">Getting Started</a>
+					guide or checkout the one of the many <a href="https://www.youtube.com/grafana">screencasts</a>.
+
+					<img src="/assets/img/white_graph.png"></img>
+				</div>
+
+				<br>
+				<br>
+				<br>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+{{ partial "footer.html" . }}

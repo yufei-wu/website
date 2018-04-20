@@ -1,0 +1,27 @@
+.email-unconfirmed {
+  display: inline-block;
+}
+
+.email-unconfirmed__status {
+  margin-bottom: $spacer;
+  font-size: rem-calc(18);
+  line-height: rem-calc(30);
+
+  b {
+    color: $primary-color;
+  }
+
+  button {
+    margin-right: $spacer;
+  }
+}
+
+.email-unconfirmed__message {
+  &--success {
+    color: $success-color;
+  }
+
+  &--fail {
+    color: $alert-color;
+  }
+}

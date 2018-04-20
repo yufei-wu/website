@@ -1,0 +1,21 @@
+.table {
+  margin-bottom: $spacer * 2;
+
+  th {
+    text-align: left;
+    color: $white;
+    padding: 2px 20px;
+  }
+
+  .table__firstcol {
+    padding-left: 0;
+  }
+
+  td.table__col-desc {
+    width: 50%;
+  }
+
+  td {
+    padding: 2px 20px;
+  }
+}

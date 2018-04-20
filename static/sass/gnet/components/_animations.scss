@@ -1,0 +1,32 @@
+// ==========================================================================
+// GENERIC ANIMATIONS
+// ==========================================================================
+
+// New Div Animation
+
+.newdivanimation-enter {
+  opacity: 0.01;
+}
+
+.newdivanimation-enter.newdivanimation-enter-active {
+  opacity: 1;
+  transition: all 200ms ease-in;
+}
+
+.newdivanimation-appear {
+  opacity: 0.01;
+}
+
+.newdivanimation-appear.newdivanimation-appear-active {
+  opacity: 1;
+  transition: all 800ms ease-in;
+}
+
+.newdivanimation-leave {
+  opacity: 1;
+}
+
+.newdivanimation-leave.newdivanimation-leave-active {
+  opacity: 0.01;
+  transition: all 200ms ease-out;
+}

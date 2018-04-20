@@ -1,0 +1,117 @@
+
+.download-version-selectors {
+  padding-top: 0;
+  float: right;
+
+  .dropdown {
+    display: inline-block;
+    margin-left: $spacer;
+  }
+}
+
+.download-release__date {
+  color: $text-color-muted;
+  font-size: 80%;
+}
+
+.download-platforms__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: $spacer*3;
+}
+
+.download-platforms__tab-link {
+  padding: rem-calc(10, 20);
+  box-shadow: $btn-dark-shadow;
+  background: $btn-dark-bg;
+  text-align: center;
+  min-width: rem-calc(120);
+  margin-right: $spacer;
+  color: $text-color;
+  font-weight: bold;
+
+  &:hover {
+    background: $btn-dark-hover-bg;
+    color: $white;
+  }
+
+  &--active {
+    border-bottom: 2px solid $primary-color;
+    border-image: $orange-gradient;
+    border-image-slice: 1;
+  }
+
+  &:before {
+    font-family: FontAwesome;
+    font-size: rem-calc(30);
+    display: block;
+  }
+
+  &--linux:before {
+    content: "\f17c";
+  }
+
+  &--windows:before {
+    content: "\f17a";
+  }
+
+  &--mac:before {
+    content: "\f179";
+  }
+
+  &--docker:before {
+    content: "\f21a";
+  }
+}
+
+.download-package {
+  margin-bottom: $spacer*2;
+}
+
+.download-package__header {
+  margin-bottom: $spacer/2;
+}
+
+.download-package__os {
+  @extend .h5;
+}
+
+.download-package__sha {
+  padding-left: $spacer*2;
+  float: right;
+  font-size: $font-size-delta;
+}
+
+.download-package__arch {
+  color: $text-color-muted;
+  padding-left: $spacer/2;
+}
+
+.download-package__code {
+  background: $darker-gray2;
+  font-family: consolas, monospace, monospace;
+  font-size: .95em;
+  white-space: nowrap;
+  padding: $spacer;
+
+  a {
+    color: $text-color;
+  }
+
+  .keyword {
+    color: $blue;
+  }
+}
+
+.download-article-links {
+  position: relative;
+  top: $spacer;
+
+  a {
+    font-weight: bold;
+    padding-right: $spacer*2;
+  }
+}
+
+
+

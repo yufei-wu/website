@@ -1,0 +1,107 @@
+// Page Submenu
+// -------------------------------------------------------------------------
+
+$page-submenu-bg:             $darker-gray;
+$page-submenu-bottom-border-color:  $darker-gray2;
+
+.page-submenu {
+  background: $page-submenu-bg;
+  border-bottom: 1px solid $page-submenu-bottom-border-color;
+
+  & .cta {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .wrapper {
+    padding: 0 10px;
+    position: relative;
+  }
+}
+
+.page-submenu__list {
+  text-align: center;
+  position: relative;
+}
+
+.page-submenu__list-item {
+  color: $white;
+  border-bottom: 1px solid $page-submenu-bottom-border-color;
+  display: inline-block;
+  padding: rem-calc(11 7);
+  font-size: rem-calc(14);
+  position: relative;
+  top: 1px;
+
+  &:last-child {
+    margin-right: 0 !important;
+  }
+
+  @include at-least(small) {
+    padding: rem-calc(15 15);
+    font-size: $font-size-gamma;
+  }
+
+  @include at-least(nav) {
+    padding: rem-calc(17 25 13 25);
+    font-size: $font-size-beta;
+  }
+
+  &--active {
+    border-bottom: 1px solid $primary-color;
+    border-image: $orange-gradient;
+    border-image-slice: 1;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+  }
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.page-submenu__logo {
+  position: absolute;
+  z-index: 100;
+  top: 10px;
+  left: 20px;
+  display: block;
+  width: 37px;
+  height: 37px;
+  opacity: 0;
+  transition: opacity 0s;
+
+  > img {
+    width: 37px;
+    height: 37px;
+  }
+}
+
+.page-submenu {
+  .site-nav__toggle {
+    position: absolute;
+    right: 7px;
+    top: 2px;
+    opacity: 0;
+    display: none;
+    transition: opacity 0s;
+  }
+}
+
+.page-submenu--sticky {
+  .page-submenu {
+    box-shadow: 0 0 20px $black;
+    background: $black;
+    transition: background 400ms ease-in;
+    z-index: 10000;
+
+    @include at-least(small)  {
+      .page-submenu__logo {
+        opacity: 1;
+        transition: opacity 400ms ease-in;
+      }
+    }
+  }
+}

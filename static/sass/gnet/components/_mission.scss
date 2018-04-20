@@ -1,0 +1,39 @@
+// ==========================================================================
+// about/MISSION
+// ==========================================================================
+
+.screenshot--mission {
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+
+  > img {
+    -webkit-transition: -webkit-transform 0.15s ease 0s;
+    -moz-transition: -moz-transform 0.15s ease 0s;
+    -o-transition: -o-transform 0.15s ease 0s;
+    transition: transform 0.15s ease 0s;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    height: 100%;
+    width: 100%;
+  }
+
+  &:hover {
+    > img {
+      -webkit-transform: scale3d(1.05, 1.05, 1.05);
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    .screenshot__zoom img {
+      opacity: 1;
+    }
+  }
+}
+
+.mission--overflow {
+    overflow: hidden;
+}
+
+.mission__margin-bottom {
+  margin-bottom: rem-calc(50);
+}

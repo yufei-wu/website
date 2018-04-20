@@ -1,0 +1,25 @@
+<article class="blog-list-item">
+	{{ $author := index $.Site.Data.authors .Params.author }}
+
+	<div class="blog-list-item__author-img">
+		<img src="{{ $author.imgUrl }}" />
+	</div>
+
+	<div class="blog-list-item__body">
+		<h2 class="blog-list-item__heading">
+			<a href="{{ .Permalink }}"> {{ .Title }}</a>
+		</h2>
+
+		<div class="blog-lite-item--byline">
+			by <a href="https://grafana.com/about/team">{{ $author.name }}</a>
+			{{ .Date.Format "2 Jan 2006" }}<br>
+
+			<p>
+				{{ .Summary }}
+			</p>
+
+			<a class="btn btn-outline" href="{{ .Permalink }}">Read Full Post</a>
+		</div>
+	</div>
+</article>
+

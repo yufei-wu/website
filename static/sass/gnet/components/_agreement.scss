@@ -1,0 +1,25 @@
+//
+// Agreements
+// --------------------------------------------------
+
+
+// Inline Agreement
+.agreement {
+
+  background-color: $gray;
+  color: $off-white2;
+  padding: 20px;
+  border-radius: 4px;
+
+  background-color: $gray;
+  border: 1px solid darken($gray, 15%);
+  white-space: nowrap;
+
+  display: block;
+  line-height: 1.45;
+  word-wrap: normal;
+  white-space: pre-wrap;
+  background-color: $gray;
+
+  margin-bottom: rem-calc(30);
+}

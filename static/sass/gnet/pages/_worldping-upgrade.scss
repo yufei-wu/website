@@ -1,0 +1,302 @@
+// ==========================================================================
+// PRICING PAGE
+// ==========================================================================
+
+.pricing-form {
+  .dropdown {
+    margin-top: rem-calc(40);
+    margin-bottom: rem-calc(20);
+  }
+ // label {visibility: hidden;
+  // }
+}
+
+// Card Structure
+// --------------------------------------------------------------------------
+
+.pricing-tier-list {
+  min-width: 275px;
+  line-height: rem-calc(22);
+}
+
+.pricing-tier-list__item {
+  height: 295px;
+  padding: 0.75rem 1rem 1rem;
+  border-radius: 4px;
+  background: linear-gradient(135deg, darken($gray, 15%) 0%, $dark-gray 100%);
+  box-shadow: -1px -1px 0px 0px rgba(255,255,255,0.1), 1px 1px 0px 0px rgba(0,0,0, 0.3);
+  min-height: 13.5rem;
+  overflow: hidden;
+  text-overflow: clip;
+  position: relative;
+}
+
+.pricing-tier-list__item--selected {
+  @extend .pricing-tier-list__item;
+  height: 280px;
+}
+
+.pricing-tier-list__item--with-action {
+  @extend .pricing-tier-list__item;
+  height: 360px;
+}
+
+.pricing-tier-list__item--small {
+  height: rem-calc(180);
+  min-height: rem-calc(100);
+}
+
+.pricing-tier-list__item:hover {
+  cursor: pointer;
+  background: linear-gradient(135deg, darken($gray, 13%) 0%, $dark-gray 100%);
+  box-shadow: -1px -1px 0px 0px rgba(255,255,255,0.1), 1px 1px 0px 0px rgba(0,0,0, 0.3);
+}
+
+.pricing-tier-list__item:active {
+  background: linear-gradient(135deg, darken($gray, 16%) 0%, darken($dark-gray, 1%) 100%);
+  box-shadow: -1px -1px 0px 0px rgba(255,255,255,0.1), 1px 1px 0px 0px rgba(0,0,0, 0.3);
+}
+
+.pricing-tier-radio {
+  position: absolute;
+}
+
+.worldping-upgrade__icon {
+  width: rem-calc(200);
+}
+
+// Text Overrides
+// --------------------------------------------------------------------------
+.tier-title {
+  text-transform: uppercase;
+  font-size: $font-size-epsilon;
+  color: $primary-color;
+  font-weight: 400;
+  text-align: center;
+  margin: 0.25rem auto rem-calc(20);
+}
+
+.discount {
+  font-style: italic;
+  color: darken($white, 20);
+  font-size: $font-size-gamma;
+  text-align: center;
+  margin: 0 auto;
+  position: absolute;
+  bottom: rem-calc(7);
+  left: 30%;
+}
+
+.pricing-tier__body {
+  text-align: center;
+}
+
+.pricing-tier__body h2 {
+  font-style: italic;
+  color: darken($white, 20);
+  font-size: rem-calc(50);
+  text-align: center;
+  letter-spacing: -1px;
+  font-weight: 700;
+
+  sup {
+    font-size: rem-calc(30);
+    vertical-align: middle;
+  }
+
+  .hash {
+    font-weight: 400;
+    font-size: rem-calc(40);
+  }
+  .period {
+    font-size: rem-calc(40);
+  }
+}
+
+.pricing-tier__body--small-text {
+  font-size: $font-size-delta;
+  list-style-type: disc;
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: rem-calc(35);
+    .period{
+      font-size: 2rem;
+    }
+  }
+}
+.pricing-tier__body--narrow {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.pricing-tier__selected {
+  width: 100%;
+  background-color: $black;
+  color: $primary-color;
+  display: block;
+  text-align: center;
+  padding: 0.5rem;
+  font-style: italic;
+}
+
+.pricing-tier__action {
+  position: absolute;
+  bottom: rem-calc(22);
+  right: rem-calc(70);
+}
+
+strong.pricing-copy--checks-per-month {
+  color: $white;
+}
+
+.check-num {
+  color: darken($white, 20);
+}
+
+.most-popular {
+  text-align: center;
+  margin: 0 auto;
+  background: linear-gradient(135deg, darken($dark-gray, 2%) 0%, $darker-gray 100%);
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  padding: 5px 0;
+  color: $primary-color;
+  font-style: italic;
+  font-weight: 700;
+  font-size: $font-size-delta;
+}
+
+
+table.pricing-table {
+	border: none;
+	border-collapse: collapse;
+	font-size: 90%;
+	font-weight: 400;
+	margin-bottom: $spacer * 2;
+	th {
+		text-align: center;
+	}
+	th.large {
+		font-size: 150%;
+		background-color: #2F2F2F;
+		border-top: 3px solid $dark-gray;
+		border-right: 2px solid $dark-gray;
+		padding: 20px 0;
+	}
+	th.blank {
+		background-color: transparent;
+	}
+	th.most-pop {
+		color: $primary-color;
+    font-style: italic;
+    font-weight: 600;
+    background-color: $black;
+		padding: .5rem 0;
+		position: relative;
+	}
+	td {
+		background-color: $dark-gray;
+		text-align: center;
+		font-weight: 700;
+		border: 1px solid $dark-gray;
+		color: $white;
+		height: 60px;
+	}
+	td.sidebar {
+		background-color: #2F2F2F;
+		border-left: 1px solid $dark-gray;
+		border-right: 3px solid $dark-gray;
+		border-bottom: 1px solid $dark-gray;
+		width: 150px;
+		text-align: left;
+		font-size: 85%;
+		padding: 10px;
+	}
+	td.pricing {
+		font-weight: 300;
+		background-color: #2F2F2F;
+		border-left: 2px solid $dark-gray;
+		border-right: 2px solid $dark-gray;
+	}
+  td.custom {
+		font-weight: 300;
+		background-color: #2F2F2F;
+		border-left: 2px solid $dark-gray;
+		border-right: 2px solid $dark-gray;
+    padding: rem-calc(15);
+	}
+  td.short-height {
+    height: 40px;
+	}
+	td.icon {
+		vertical-align: top;
+	}
+
+	td {
+		img {
+			display: block;
+			margin: 20px auto 0 auto;
+		}
+	}
+
+	p.small {
+		font-weight: 300;
+	}
+
+  span.notation, h2.notation {
+    color: $medium-gray;
+    display: block;
+	}
+
+  th.pricing-table-bg--stripe,td.pricing-table-bg--stripe {
+    background-color: lighten($dark-gray, 8);
+  }
+
+}
+
+h2.no-top-margin {
+  margin-top: 0;
+}
+
+.pricing-strikethrough {
+  text-decoration: line-through;
+  color: $medium-gray;
+}
+
+.pricing-table-col--custom {
+  padding: 0;
+}
+
+.pricing-table-cell--price {
+  padding: rem-calc(10) 0;
+}
+
+.pricing-table-col--custom {
+	padding: 0;
+}
+
+.pricing-table-button--contact-us {
+  margin-left: rem-calc(20);
+}
+
+.pricing-col {
+	width: 200px;
+	border: 2px solid $dark-gray;
+	height: 50px;
+	color: #fff;
+	background-color: #2F2F2F;
+}
+
+// List overrides
+// --------------------------------------------------------------------------
+.inline-number .tier2 {
+  margin-top: rem-calc(40);
+  margin-bottom: rem-calc(50);
+  margin-left: rem-calc(-20);
+}
+
+.payg-text {
+  font-size: $font-size-delta;
+  list-style-type: disc;
+}

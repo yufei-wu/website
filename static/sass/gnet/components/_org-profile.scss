@@ -1,0 +1,145 @@
+.org-header__row {
+  padding-bottom: 1rem;
+}
+
+.org-header__avatar {
+  float: left;
+  margin-right: 1rem;
+}
+
+.org-header__name {
+  color: $white;
+  margin: 0.3rem 0 0 0;
+  font-weight: 200;
+}
+
+.org-header__slug {
+  font-style: italic;
+  margin: 0;
+  font-weight: 200;
+}
+
+.org-header__url {
+  margin-top: 0.2rem;
+  font-size: $font-size-delta;
+
+  a {
+    color: inherit;
+  }
+}
+
+.org-header__joined {
+  margin-top: 0.2rem;
+  font-size: $font-size-delta;
+}
+
+.org-header__member-list {
+  text-align: right;
+  font-size: $font-size-delta;
+
+  ul {
+    display: block;
+    padding: 0;
+    margin: 0.5rem 0 0;
+
+    li {
+      display: inline-block;
+      margin: 0 0 0 0.1rem;
+      padding: 0;
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+}
+
+.org-header__member-list-title {
+  font-style: italic;
+}
+
+.org-header__no-members {
+  text-align: right;
+  font-size: $font-size-delta;
+  font-style: italic;
+}
+
+.org-profile__view-more {
+  text-align: center;
+  font-size: $font-size-delta;
+  font-style: italic;
+  color: $medium-gray;
+  display: block;
+}
+
+.org-profile__header {
+  display: flex;
+  align-items: center;
+  margin: 0 0 rem-calc(40) 0;
+}
+
+.org-profile__header--image {
+  max-width: 64px;
+  max-height: 64px;
+}
+
+.org-profile__header-plugins {
+  padding-left: 2.2rem;
+  background: url('../../static/img/icon_apps.svg') no-repeat left 50%;
+}
+
+.org-profile__header-dashboards {
+  padding-left: 2.2rem;
+  background: url('../../static/img/icon_dashboard.svg') no-repeat left 50%;
+}
+
+.org-profile__header-section {
+  flex-basis: 100%;
+  margin-left: rem-calc(10);
+}
+
+.org-profile__header-name {
+  margin: 0 0;
+}
+
+.org-profile__header-url {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: $font-size-delta;
+}
+
+.logout-link__container {
+  margin-top: 1rem;
+  margin-left: 0.7rem;
+}
+
+.logout-link {
+  font-size: $font-size-delta;
+  color: $secondary-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $light-gray;
+  }
+}
+
+.plugin-card--buttons {
+  margin: $spacer 0 $spacer/2 $spacer*5;
+  > * {
+    display: block;
+    margin-bottom: $spacer;
+  }
+  .min-button-height {
+    min-height: 30px;
+  }
+  .delete {
+    font-size: $font-size-delta;
+  }
+}
+
+.org-profile__container {
+  padding-top: 1.3rem;
+}
+
+.org-profile__itemlist {
+  margin-bottom: $spacer*2;
+}

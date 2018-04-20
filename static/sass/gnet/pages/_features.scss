@@ -1,0 +1,228 @@
+// =========================================================================
+// Feature Hero
+// Unique Grafana Features hero image  may be a better way to accomplish this - TRW
+// =========================================================================
+.wrapper--feature-hero-bg {
+  @include at-least(small) {
+    background: url('../../static/img/grafana/features_hero.png') 150% 0 no-repeat;
+    background-size: 70%;
+  }
+}
+
+
+// =========================================================================
+// Main Feature Elements
+// =========================================================================
+.features-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.features-grid__item {
+  padding: rem-calc(30);
+  flex-grow: 1;
+  text-align: center;
+
+  @include at-least(small) {
+    width: 49.999%;
+  }
+
+  @include at-least(medium) {
+    width: 33%;
+  }
+}
+
+.features-grid__img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px $black;
+}
+
+.features-grid__heading {
+  font-size: $font-size-beta;
+  margin: rem-calc(15 0);
+  color: $off-white2;
+}
+
+.features-grid__text {
+}
+
+.github-box {
+  width: 90%;
+  height: auto;
+  min-height: 0;
+  padding-left: rem-calc(20);
+  padding-right: rem-calc(20);
+  margin: 0 auto 10px auto;
+  white-space: nowrap;
+  text-align: center;
+
+  @include at-least(small) {
+    width: rem-calc(140);
+    height: rem-calc(78);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  h3 {
+    margin: rem-calc(0);
+    font-size: $font-size-kilo;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.2;
+    color: $white;
+
+    small {
+      color: $off-white;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 55%;
+      margin-left: rem-calc(5);
+      @include at-least(small) {
+        margin-left: rem-calc(26);
+        display: block;
+      }
+    }
+  }
+
+  span {
+    width: rem-calc(20);
+    color: $light-gray
+  }
+}
+
+// =========================================================================
+// Feature Tabs
+// =========================================================================
+
+.feature-tabs {
+  border-radius: rem-calc(3);
+  background: $dark-gray;
+  margin-bottom: rem-calc(40);
+  box-shadow: -1px -1px 0px 0px rgba(255,255,255,0.1), 1px 1px 0px 0px rgba(0,0,0, 0.3);
+  display: flex;
+  flex-direction: row;
+
+  @include at-least(medium) {
+    flex-direction: column;
+  }
+}
+
+.feature-tabs__tabs {
+  display: flex;
+  flex-direction: column;
+
+  @include at-least(medium) {
+    flex-direction: row;
+  }
+}
+
+.feature-tabs__tab-link {
+  color: $white;
+  font-size: $font-size-beta;
+  font-style: italic;
+  line-height: rem-calc(50);
+  background: lighten($dark-gray, 6%);
+  text-align: center;
+  border-top: 1px solid $black;
+  width: rem-calc(100);
+
+  img {
+    max-height: rem-calc(20px);
+    vertical-align: middle;
+  }
+
+  &:hover {
+    background: $dark-gray;
+  }
+
+  &--active {
+    background: $dark-gray;
+    z-index: 100;
+  }
+
+
+  @include at-least(medium) {
+    padding: rem-calc(0 20);
+    width: rem-calc(150);
+    flex-grow: 1;
+    border-top: none;
+    line-height: rem-calc(60);
+
+    img {
+      max-height: rem-calc(30px);
+    }
+  }
+
+}
+
+.feature-tab-tabs_pane {
+  box-shadow: 0 0 10px $black;
+}
+
+.feature-tab-content__title {
+  @extend .h5;
+  padding-bottom: $spacer;
+}
+
+.feature-tab-content__text {
+  color: $text-color;
+}
+
+.feature-tab-content__list {
+  padding: rem-calc(0 10);
+
+  li {
+    line-height: rem-calc(25);
+    margin-left: rem-calc(10);
+  }
+}
+
+
+// WIP Feature-showcase (the big-ass ones)
+
+.feature-showcase {
+  margin-bottom: rem-calc(60);
+  border-bottom: 1px solid $primary-color;
+  -moz-border-image: -moz-$orange-gradient;
+  -webkit-border-image: -webkit-$orange-gradient;
+  border-image: $orange-gradient;
+  border-image-slice: 1;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.feature-showcase__copy {
+  @include at-least(medium) {
+    padding-top: rem-calc(100);
+  }
+}
+
+
+// Experiment for big gifs
+
+.feature-gif__copy {
+  margin-top: 0;
+}
+
+.feature-gif__img {
+  > img {
+    width: 100%;
+  }
+}
+
+.feature-gif__item {
+  padding-left: rem-calc(16);
+  margin-bottom: rem-calc(30);
+}
+
+.feature-gif__item--active {
+  border-left: 3px solid #f46800;
+  border-image: linear-gradient(to right, #ff8100 0%, #993300 75%);
+  border-image-slice: 1;
+}

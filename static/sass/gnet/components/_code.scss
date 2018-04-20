@@ -1,0 +1,83 @@
+//
+// Code (inline and block)
+// --------------------------------------------------
+
+
+// Inline and block code styles
+code,
+pre {
+  background-color: $gray;
+  color: $white;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+// Inline code
+code {
+  color: $white;
+  background-color: $gray;
+  border: 1px solid darken($gray, 15%);
+  white-space: nowrap;
+}
+
+// Blocks of code
+pre {
+  display: block;
+  line-height: 1.45;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
+  white-space: pre-wrap;
+  background-color: $gray;
+
+  &.pre--no-bottom-margin {
+    margin-bottom: rem-calc(3);
+  }
+
+  &.pre--no-top-margin {
+    margin-top: rem-calc(3);
+  }
+
+  // Make prettyprint styles more spaced out for readability
+  &.prettyprint {
+    margin-bottom: 1.45;
+  }
+
+  &.scrollable {
+    word-break: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+  }
+
+  // Account for some code outputs that place code tags in pre tags
+  code {
+    padding: 0;
+    color: inherit;
+    white-space: pre;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border: 0;
+  }
+
+  &.scrollable > code{
+    white-space: nowrap;
+  }
+}
+
+.code-block {
+  background-color: $gray;
+  color: $white;
+  padding: 10px;
+  border-radius: 4px;
+  line-height: 1.45;
+  word-break: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  background-color: $gray;
+  font-family: consolas, monospace, monospace;
+  font-size: .95em;
+
+  .gm-scrollbar-container {
+    margin-bottom: -5px;
+  }
+}

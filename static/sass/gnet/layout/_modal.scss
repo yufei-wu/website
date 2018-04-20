@@ -1,0 +1,180 @@
+body.ReactModal__Body--open {
+  overflow: hidden;
+}
+
+.PopupModal {
+  .ReactModal__Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-perspective: 600;
+    perspective: 600;
+    opacity: 0.01;
+    z-index: $z-index-6;
+    background-color: rgba(0, 0, 0, 0.75);
+    overflow: auto;
+  }
+
+  .ReactModal__Overlay--after-open {
+    opacity: 1;
+    transition: opacity 250ms ease-in;
+  }
+
+  .ReactModal__Overlay--before-close {
+    transition: opacity 250ms ease-out;
+    opacity: 0.01;
+  }
+
+  .ReactModal__Content {
+    margin: 40px 5px;
+    outline: none;
+
+    -webkit-transform: scale(0.9);
+    background: $dark-gray;
+    border: 1px solid $primary-color;
+    -moz-border-image: -moz-$orange-gradient;
+    -webkit-border-image: -webkit-$orange-gradient;
+    border-image: $orange-gradient;
+    border-image-slice: 1;
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+
+    @include at-least(small) {
+      margin: 80px 40px;
+    }
+
+    @include at-least(medium) {
+      width: 810px;
+      margin: 80px auto;
+    }
+  }
+
+  .ReactModal__Content--after-open {
+    -webkit-transform: scale(1);
+    transition: all 250ms ease-in;
+  }
+
+  .ReactModal__Content--before-close {
+    -webkit-transform: scale(0.9);
+    transition: all 250ms ease-out;
+  }
+}
+
+.Modal__Header {
+  min-height: 2rem;
+}
+
+.Modal__CloseButton {
+  @extend .btn--close;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.modal-container {
+  @include at-least(medium) {
+    display: flex;
+    justify-content: center;
+    padding: 0 rem-calc(20);
+  }
+}
+
+.modal-container .single-column {
+  @include at-least(medium) {
+    width: 90%;
+  }
+}
+
+.modal-container .single-column.bottom {
+  @include at-least(medium) {
+    align-self: flex-end;
+  }
+}
+
+.modal-container .single-column.padded {
+  @include at-least(medium) {
+    padding-top: rem-calc(50);
+  }
+}
+
+.modal--bottom-right {
+  float: right;
+  margin: 0.25rem 0.5rem 0;
+}
+
+// ------------------------------------------------
+// Signup Modal
+// ------------------------------------------------
+
+.signup--modal__intro-copy {
+  text-align: left;
+}
+
+.signup--modal__right-column {
+  padding-top: rem-calc(30);
+}
+
+@mixin interior-section-modal($color1: $primary-color, $color2: $primary-color) {
+  $tint: tint($color1, 75%);
+
+
+  > .interior-section__title {
+    color: $color1;
+  }
+
+  a {
+    color: $color1;
+  }
+
+  .btn--primary {
+    color: $white;
+  }
+
+  .btn--outline {
+    border-color: $color1;
+    color: $color1;
+
+    &:hover {
+    border: 1px solid $color1;
+    -moz-border-image: -moz-linear-gradient(top left, $color1 0%, $color2 100%);
+    -webkit-border-image: -webkit-linear-gradient(top left, $color1 0%, $color2 100%);
+    border-image: linear-gradient(to bottom right, $color1 0%, $color2 100%);
+    border-image-slice: 1;
+    color: tint($color1, 75%);
+     border-radius: 10px;
+    }
+  }
+
+  &:before {
+    background: linear-gradient(to right, $color1 0%, $color2 100%);
+  }
+}
+
+.interior-section-modal {
+  position: relative;
+  padding-top: rem-calc(45);
+
+  &:before {
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    height: 1px;
+    content: '';
+  }
+}
+
+.interior-section-modal.signup--modal__interior-section {
+  @include interior-section-modal($primary-color, #f26529);
+  text-align: start;
+  padding: 0.5rem;
+
+  @include at-least(medium) {
+    padding-top: rem-calc(5);
+  }
+
+  &:before {
+    background: none;
+  }
+}

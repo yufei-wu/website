@@ -1,0 +1,19 @@
+baseurl = "http://localhost:3002/"
+languageCode = "en-us"
+title = "Grafana Labs Blog"
+canonifyurls = true
+relativeURLs = false
+verbose = true
+enableRobotsTXT = true
+disableSitemap = false
+disableRSS = false
+preserveTaxonomyNames = true
+metaDataFormat = "yaml"
+
+[taxonomies]
+category = "categories"
+
+[permalinks]
+  blog = ":year/:month/:day/:title/"
+
+

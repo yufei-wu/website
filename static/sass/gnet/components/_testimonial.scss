@@ -1,0 +1,182 @@
+// ==========================================================================
+// IN-PAGE TESTIMONIAL BAR
+// ==========================================================================
+
+.page-section--testimonial {
+  background: url('../../static/img/polygon_texture_black.jpg') 0 0 repeat;
+  background-size: cover;
+  padding: rem-calc(30 0);
+  margin-bottom: $spacer * 5;
+}
+
+.page-section--testimonial2{
+  background: url('../../static/img/polygon_texture_blue.jpg') 0 0 repeat;
+  background-size: cover;
+  padding: rem-calc(30 0);
+  margin-bottom: $spacer * 5;
+}
+
+.testimonial-logos {
+  background: url('../../static/img/polygon_texture_black.jpg') 0 0 repeat;
+  background-size: cover;
+  padding: rem-calc(25 0 0 0);
+  margin-bottom: $spacer;
+  box-shadow: $page-section-with-bg-pattern-shadow;
+  text-align: center;
+
+  img {
+    padding-right: rem-calc(30);
+    vertical-align: middle;
+    margin-bottom: rem-calc(10);
+  }
+}
+
+.testimonial-logos__link {
+  display: block;
+  font-weight: bold;
+  font-size: 85%;
+  padding: $spacer/2 0 $spacer 0;
+}
+
+.testimonial-container {
+  background: url('../../static/img/polygon_texture_black.jpg') 0 0 repeat;
+  background-size: cover;
+  padding: rem-calc(30 0);
+  margin-bottom: $spacer * 5;
+  box-shadow: $page-section-with-bg-pattern-shadow;
+
+  // a bit hacky
+  .testimonial {
+    margin-bottom: 0;
+  }
+
+  .testimonial__logo {
+    background: transparent;
+    box-shadow: none;
+  }
+}
+
+.testimonial {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: $spacer*7;
+}
+
+.testimonial__logo {
+  width: 25%;
+  position: relative;
+  margin-right: rem-calc(50);
+  background: $card-background;
+  box-shadow: $card-shadow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $spacer;
+  flex: none;
+
+  img {
+    width: 100%;
+    max-height: 110px;
+  }
+}
+
+.testimonial-logo__circle {
+  background-position:50% 50%;
+  background-repeat:no-repeat;
+  background-size: contain;
+  background-size: 70%;
+  position: absolute;
+  top: -47px;
+  border-radius: 50%;
+	width: 200px;
+	height: 200px;
+  background-color: black;
+
+  &--digital-ocean {
+    background-image: url(https://www.digitalocean.com/assets/media/logos-badges/png/DO_Logo_Vertical_Blue-6321464d.png);
+  }
+}
+
+.testimonial__text {
+  width: 75%;
+}
+
+.testimonial__quote {
+  display: block;
+  font-size: $font-size-kilo;
+  font-style: italic;
+  color: $white;
+  margin-bottom: rem-calc(20);
+
+  &--gray {
+    color: $off-white;
+  }
+
+  &--right-align {
+    text-align: right;
+    margin-right: rem-calc(50);
+  }
+}
+
+.testimonial__attribution {
+  display: block;
+  color: $text-color-muted;
+  font-weight: 700;
+}
+
+// Case Studies
+// ------------------------------------------------------------------------------------
+
+.case-study {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 4rem;
+}
+
+.case-study__text {
+  text-align: right;
+
+  @include at-least(medium) {
+    margin-right: 3.125rem;
+  }
+}
+
+.case-study__headline {
+  font-size: $font-size-alpha;
+  font-weight: 700;
+  font-style: italic;
+  color: $white;
+  display: block;
+
+  @include at-least(medium) {
+    font-size: $font-size-mega;
+  }
+}
+
+.case-study__sub-copy {
+  color: $off-white2;
+  font-size: $font-size-gamma;
+  display: block;
+  margin-bottom: rem-calc(20);
+}
+
+.case-study__logo {
+  display: none;
+  position: relative;
+  margin-right: rem-calc(50);
+  min-width: 225px;
+
+  @include at-least(medium) {
+    display: block;
+  }
+}
+
+.case-study__paper-stack {
+  position: absolute;
+  top: -47px;
+  background-repeat:no-repeat;
+  background-size: 85%;
+  width: 200px;
+  height: 225px;
+  background-image: url("../../static/img/icon_paper_stack.svg");
+}

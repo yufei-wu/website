@@ -1,0 +1,35 @@
+.thumbnail {
+  position: relative;
+}
+
+.thumbnail-action {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: rem-calc(25);
+  height: rem-calc(25);
+  color: $off-white;
+}
+
+.thumbnail-action input[type=file] {
+  cursor: pointer;
+  font-size: 0;
+  width: rem-calc(30) !important;
+  height: rem-calc(30) !important;
+}
+
+.thumbnail-action__icon {
+  position:absolute;
+  top: rem-calc(3);
+  right: rem-calc(6);
+  cursor: pointer;
+}
+
+.thumbnail:hover .thumbnail-action {
+  display:block;
+}
+
+.thumbnail-action:hover {
+  color: $white;
+}

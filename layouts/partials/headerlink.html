@@ -1,0 +1,59 @@
+
+{{ .scratch.Set "headerLinkClass" "" }}
+
+{{ $baseUrl := .scratch.Get "navBaseUrl" }}
+
+<!-- Handle local dev -->
+{{ if eq $baseUrl "http://localhost:3002/"}}
+	{{ if eq .link.Name "Docs" }}
+		{{ .scratch.Set "navBaseUrl" "http://localhost:3002/docs" }}
+	{{ end }}
+{{ end }}
+
+<!-- Handle grafana production -->
+{{ if eq $baseUrl "http://grafana.org/"}}
+	{{ if eq .link.Name "Docs" }}
+		{{ .scratch.Set "navBaseUrl" "http://docs.grafana.org" }}
+	{{ end }}
+{{ end }}
+
+<!-- Handle grafana production -->
+{{ if eq $baseUrl "http://staging.grafana.org/"}}
+	{{ if eq .link.Name "Docs" }}
+		{{ .scratch.Set "navBaseUrl" "http://staging-docs.grafana.org" }}
+	{{ end }}
+{{ end }}
+
+<!-- Handle docs production -->
+{{ if eq $baseUrl "http://docs.grafana.org/"}}
+	{{ .scratch.Set "navBaseUrl" "http://grafana.org/" }}
+
+	{{ if eq .link.Name "Docs" }}
+		{{ .scratch.Set "navBaseUrl" "http://docs.grafana.org" }}
+	{{ end }}
+{{ end }}
+
+<!-- Handle docs staging -->
+{{ if eq $baseUrl "http://staging-docs.grafana.org/"}}
+	{{ .scratch.Set "navBaseUrl" "http://staging.grafana.org/" }}
+
+	{{ if eq .link.Name "Docs" }}
+		{{ .scratch.Set "navBaseUrl" "http://staging-docs.grafana.org" }}
+	{{ end }}
+{{ end }}
+
+{{ if (hasPrefix .link.URL "http")}}
+	{{ .scratch.Set "navBaseUrl" "" }}
+{{ end }}
+
+{{ if eq .link.Name "Download" }}
+	{{ .scratch.Set "headerLinkClass" "top-bar-download-link" }}
+{{ end }}
+
+{{ $baseUrl := .scratch.Get "navBaseUrl" }}
+
+<li>
+	<a href="{{trim $baseUrl "/"}}{{ .link.URL}}" class="{{ .scratch.Get "headerLinkClass" }}">
+		{{ .link.Name }}
+	</a>
+</li>
