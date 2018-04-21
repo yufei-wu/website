@@ -1,7 +1,0 @@
-{{ range where .Data.Pages "Type" "index" }}
-	{{ template "blog/recent.html" . }}
-{{ end }}
-{{ range where .Data.Pages "Title" "Docs Home" }}
-	{{ template "docs/single.html" . }}
-{{end}}
-
